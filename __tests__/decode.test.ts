@@ -18,6 +18,10 @@ describe('decode', () => {
       expect(decode(undefined)).toEqual('')
     })
 
+    test('decodes unicode characters', () => {
+      expect(decode('你好')).toEqual('你好')
+    })
+
     test('decodes multi-byte characters', () => {
       expect(decode('\xF0\x9F\xA4\x94')).toEqual('🤔')
     })
